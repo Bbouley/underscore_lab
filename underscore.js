@@ -18,3 +18,45 @@ _.contains = function(array, num1){
 };
 
 console.log(_.contains(array1, 6))
+
+_.first = function(array){
+  return array[0]
+}
+
+console.log(_.first(array1))
+
+_.last = function(array){
+  return array[(array.length)-1]
+}
+
+console.log(_.last(array1))
+
+_.max = function(array){
+  num = 0
+  for (i=0; i<array.length; i++){
+    if (array[i]>0){
+      num = array[i];
+    }
+  } return num;
+}
+
+console.log(_.max(array1))
+
+_.min = function(array){
+  num = 999999999
+  for(i=0; i<array.length; i++){
+    if (array[i]<num){
+      num = array[i]
+    }
+  } return num;
+}
+
+console.log(_.min(array1))
+
+_.shuffle = function(array){
+  for(i =0; i<array.length; i++){}
+  var randomnum = Math.floor(Math.random() * array1.length);
+  console.log (randomnum);
+}
+
+_.shuffle(array1)
