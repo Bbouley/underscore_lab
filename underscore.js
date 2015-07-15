@@ -54,9 +54,13 @@ _.min = function(array){
 console.log(_.min(array1))
 
 _.shuffle = function(array){
-  for(i =0; i<array.length; i++){}
-  var randomnum = Math.floor(Math.random() * array1.length);
-  console.log (randomnum);
-}
+  var m =array.length, t, i;
+  while (m){
+  i = Math.floor(Math.random() * m--);
+  t = array[m];
+  array[m]=array[i];
+  array[i]=t;
+} return array;
+};
 
-_.shuffle(array1)
+console.log(_.shuffle(array1))
