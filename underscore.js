@@ -63,11 +63,21 @@ _.shuffle = function(array){
 }  return array;
 };
 
-console.log(_.shuffle(array1))
+// console.log(_.shuffle(array1))
 
-function updateDom(html,id){
-  var element = document.getElementById(id);
-  element.innerHTML = html;
+array2 = ['dog', 'cat', 'cow', 'mouse', 'bear', 'fish']
+
+_.sample = function(array, numOfItems){
+  if (numOfItems === undefined || numOfItems === 0){
+    numOfItems = 1
+  };
+  var copyArray = array.slice(0);
+  var newArray = [];
+    for(i=0; i<numOfItems; i++){
+      var randNum = Math.floor(Math.random()*array.length);
+      var randIndex = copyArray[randNum];
+      newArray.splice(numOfItems-1, i, randIndex);
+    }; console.log(newArray);
 }
 
-updateDom('test','card')
+_.sample(array2, 2)
