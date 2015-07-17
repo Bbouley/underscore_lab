@@ -77,7 +77,25 @@ _.sample = function(array, numOfItems){
       var randNum = Math.floor(Math.random()*array.length);
       var randIndex = copyArray[randNum];
       newArray.splice(numOfItems-1, i, randIndex);
-    }; console.log(newArray);
+    } return newArray;
 }
 
-_.sample(array2, 2)
+// console.log(_.sample(array2, 2))
+
+_.difference = function(array, array2){
+  var copyArray = array.slice(0);
+  for (i=0; i<array.length; i++){
+    var temp = array[i];
+    for (j=0; j<array2.length; j++){
+      if (array2[j] === temp){
+        var temp2 = array2[j];
+        copyArray.splice(temp2);
+      };
+    };
+  } console.log(copyArray);
+};
+
+var num1 = [1,2,3,4,5,6,7,8];
+var num2 = [1,3,5,7,9];
+
+_.difference(num1,num2)
