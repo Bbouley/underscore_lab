@@ -86,25 +86,20 @@ _.difference = function(array, array2){
    
    var copyArray = array.slice(0);
    var copyArray2 = array2.slice(0);
-   var tempArray = [];
 
      for (i=0; i<copyArray.length; i++){
-    
+         var tempArray = [];
        
        for (j=0; j<copyArray2.length; j++){
-         if (array2[j] === array[i]){
-
-           tempArray.push(copyArray[i]);
-
-        };
+         if (copyArray2[j] === copyArray[i]){
+           tempArray = copyArray.splice([j], 1);
+        }; 
       }; 
-    }; console.log(tempArray);  
-       console.log(copyArray);
-       console.log(copyArray2);
-
+    }; 
+    console.log(copyArray); 
   }
 
-var num1 = [1,2,3,4,5,6,7,8];
+var num1 = [1,2,3,4,5,6,7,8,9];
 var num2 = [1,3,5,7,9];
 
 _.difference(num1,num2)
