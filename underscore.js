@@ -65,7 +65,7 @@ _.shuffle = function(array){
 
 // console.log(_.shuffle(array1))
 
-array2 = ['dog', 'cat', 'cow', 'mouse', 'bear', 'fish']
+var array2 = ['dog', 'cat', 'cow', 'mouse', 'bear', 'fish']
 
 _.sample = function(array, numOfItems){
   if (numOfItems === undefined || numOfItems === 0){
@@ -88,7 +88,7 @@ _.difference = function(array, array2){
    var copyArray2 = array2.slice(0);
 
      for (i=0; i<copyArray.length; i++){
-         var tempArray = [];
+         var tempArray1 = [];
        
        for (j=0; j<copyArray2.length; j++){
          if (copyArray2[j] === copyArray[i]){
@@ -96,10 +96,28 @@ _.difference = function(array, array2){
         }; 
       }; 
     }; 
-    console.log(copyArray); 
+    return copyArray; 
   }
 
 var num1 = [1,2,3,4,5,6,7,8,9];
 var num2 = [1,3,5,7,9];
 
-_.difference(num1,num2)
+//console.log(_.difference(num1,num2))
+
+array3 = ['a', 'b', 'c', 'd']
+
+_.indexOf = function(array, value){
+  var notInArray = 0;
+  if(value>array.length-1){
+    return -1;
+  } else  {
+    for(i = 0; i<array.length; i++){
+      if (value === array[i]){
+        return i;
+      } else { 
+        notInArray = -1 };
+    };
+  }; return notInArray;
+};
+
+console.log(_.indexOf(array3, 'c'));
