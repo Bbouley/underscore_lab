@@ -83,18 +83,26 @@ _.sample = function(array, numOfItems){
 // console.log(_.sample(array2, 2))
 
 _.difference = function(array, array2){
-  var copyArray = array.slice(0);
-   var tempArray = []
-     for (i=0; i<array.length; i++){
-       var temp = array[i];
-       for (j=0; j<array2.length; j++){
-         if (array2[j] !== temp){
-           var temp2 = array2[j];
-           copyArray.splice(temp2);
-        } console.log(copyArray);
-     };
-  };
-};
+   
+   var copyArray = array.slice(0);
+   var copyArray2 = array2.slice(0);
+   var tempArray = [];
+
+     for (i=0; i<copyArray.length; i++){
+    
+       
+       for (j=0; j<copyArray2.length; j++){
+         if (array2[j] === array[i]){
+
+           tempArray.push(copyArray[i]);
+
+        };
+      }; 
+    }; console.log(tempArray);  
+       console.log(copyArray);
+       console.log(copyArray2);
+
+  }
 
 var num1 = [1,2,3,4,5,6,7,8];
 var num2 = [1,3,5,7,9];
